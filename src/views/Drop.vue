@@ -2,18 +2,20 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <div>
-      <div class="team" v-for="(team, tindex) in teamDataArr" :key="tindex">
-        <div
-          class="member"
+      <div class="team"
+        v-for="(team, tindex) in teamDataArr" 
+        :key="tindex"
+        >
+        <div class="member"
           v-for="(item, cindex) in team.children"
-          :key="cindex"
+          :key="cindex" 
           :data-id="tindex + '-' + cindex"
           draggable="true"
           @dragstart="onDragstart($event)"
           @dragend="onDragend($event)"
           @dragover="onDragover($event)"
           @drop="onDrop($event)"
-        >
+          >
           <div>{{ item.id }}</div>
           <div>{{ item.name }}</div>
           <div>{{ item.mobile }}</div>
@@ -135,10 +137,10 @@ export default {
       // event.target 都返回源元素
       console.log(
         "下标" +
-          this.startExchangeIndex +
-          " 和 " +
-          this.endExchangeIndex +
-          "进行替换"
+        this.startExchangeIndex +
+        " 和 " +
+        this.endExchangeIndex +
+        "进行替换"
       );
 
       let startTeamIndex = parseInt(this.startExchangeIndex.split("-")[0]);
