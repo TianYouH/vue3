@@ -1,5 +1,5 @@
 <template>
-  <div class='iframe' >
+  <div class="iframe">
     <iframe src="http://led.dev.ztosys.com" frameborder="0"></iframe>
   </div>
 </template>
@@ -7,9 +7,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 
-@Component({
-})
-
+@Component({})
 export default class Iframe extends Vue {}
 </script>
 <style lang="scss" scoped>
@@ -22,4 +20,3 @@ export default class Iframe extends Vue {}
   }
 }
 </style>
-

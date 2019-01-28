@@ -3,7 +3,17 @@
     <h1>{{ msg }}</h1>
     <div>
       <div class="team" v-for="(team, tindex) in teamDataArr" :key="tindex">
-        <div class="member" v-for="(item, cindex) in team.children" :key="cindex" :data-id="tindex + '-' + cindex" draggable="true" @dragstart="onDragstart($event)" @dragend="onDragend($event)" @dragover="onDragover($event)" @drop="onDrop($event)">
+        <div
+          class="member"
+          v-for="(item, cindex) in team.children"
+          :key="cindex"
+          :data-id="tindex + '-' + cindex"
+          draggable="true"
+          @dragstart="onDragstart($event)"
+          @dragend="onDragend($event)"
+          @dragover="onDragover($event)"
+          @drop="onDrop($event)"
+        >
           <div>{{ item.id }}</div>
           <div>{{ item.name }}</div>
           <div>{{ item.mobile }}</div>
@@ -123,23 +133,20 @@ export default {
     },
     onDragend(event) {
       // event.target 都返回源元素
-      console.log(
-        "下标" +
-        this.startExchangeIndex +
-        " 和 " +
-        this.endExchangeIndex +
-        "进行替换"
-      );
+      console.log(`下标
+                  ${this.startExchangeIndex}
+                  和
+                  ${this.endExchangeIndex}
+                  进行替换`);
 
-      let startTeamIndex = parseInt(this.startExchangeIndex.split("-")[0]);
-      let startMemberIndex = parseInt(this.startExchangeIndex.split("-")[1]);
-      let endTeamIndex = parseInt(this.endExchangeIndex.split("-")[0]);
-      let endMemberIndex = parseInt(this.endExchangeIndex.split("-")[1]);
+      const startTeamIndex = parseInt(this.startExchangeIndex.split("-")[0]);
+      const startMemberIndex = parseInt(this.startExchangeIndex.split("-")[1]);
+      const endTeamIndex = parseInt(this.endExchangeIndex.split("-")[0]);
+      const endMemberIndex = parseInt(this.endExchangeIndex.split("-")[1]);
 
-      let _id = this.teamDataArr[endTeamIndex].children[endMemberIndex].id;
-      let _name = this.teamDataArr[endTeamIndex].children[endMemberIndex].name;
-      let _mobile = this.teamDataArr[endTeamIndex].children[endMemberIndex]
-        .mobile;
+      const _id = this.teamDataArr[endTeamIndex].children[endMemberIndex].id;
+      const _name = this.teamDataArr[endTeamIndex].children[endMemberIndex].name;
+      const _mobile = this.teamDataArr[endTeamIndex].children[endMemberIndex].mobile;
 
       this.teamDataArr[endTeamIndex].children[
         endMemberIndex
@@ -163,7 +170,7 @@ export default {
     },
     onDrop(event) {
       // event.target 都返回目标元素
-      if (event.target.className == "member") {
+      if (event.target.className === "member") {
         this.endExchangeIndex = event.target.getAttribute("data-id");
       } else {
         this.endExchangeIndex = event.target.parentElement.getAttribute(
