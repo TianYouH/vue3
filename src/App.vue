@@ -3,13 +3,19 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/drop">拖拽(数据交换)</router-link>
+      <router-link to="/iframe">Iframe</router-link>
     </div>
     <router-view />
   </div>
 </template>
 
 <style lang="scss">
+body,
+html {
+  height: 100%;
+}
 #app {
+  height: 100%;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

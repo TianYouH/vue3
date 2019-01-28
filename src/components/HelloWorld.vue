@@ -1,12 +1,10 @@
 <template>
   <div class="hello">
-    <h1 @click='test()' >{{ msg }}</h1>
+    <h1 @click="test()">{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
       check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener"
-        >vue-cli documentation</a
-      >.
+      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
     </p>
     <h3>Installed CLI Plugins</h3>
     <h3>Essential Links</h3>
@@ -21,22 +19,17 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 export default class HelloWorld extends Vue {
   @Prop() private msg!: string;
 
-  test (): void {
-    this.test1().then(
-      (res: string) => {
-        console.log(res);
-      }
-    )
+  test(): void {
+    this.test1().then((res: string) => {
+      console.log(res);
+    });
   }
 
-  test1 (): Promise<string> {
+  test1(): Promise<string> {
     return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        // resolve('金');
-      }, 3000);
-    })
+      setTimeout(() => {}, 3000);
+    });
   }
-
 }
 </script>
 

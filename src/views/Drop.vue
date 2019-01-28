@@ -2,20 +2,8 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <div>
-      <div class="team"
-        v-for="(team, tindex) in teamDataArr" 
-        :key="tindex"
-        >
-        <div class="member"
-          v-for="(item, cindex) in team.children"
-          :key="cindex" 
-          :data-id="tindex + '-' + cindex"
-          draggable="true"
-          @dragstart="onDragstart($event)"
-          @dragend="onDragend($event)"
-          @dragover="onDragover($event)"
-          @drop="onDrop($event)"
-          >
+      <div class="team" v-for="(team, tindex) in teamDataArr" :key="tindex">
+        <div class="member" v-for="(item, cindex) in team.children" :key="cindex" :data-id="tindex + '-' + cindex" draggable="true" @dragstart="onDragstart($event)" @dragend="onDragend($event)" @dragover="onDragover($event)" @drop="onDrop($event)">
           <div>{{ item.id }}</div>
           <div>{{ item.name }}</div>
           <div>{{ item.mobile }}</div>
