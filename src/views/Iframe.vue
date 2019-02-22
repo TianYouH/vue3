@@ -1,6 +1,6 @@
 <template>
   <div class="iframe">
-    <iframe src="http://led.dev.ztosys.com" frameborder="0"></iframe>
+    <iframe src="https://www.baidu.com" frameborder="0"></iframe>
   </div>
 </template>
 
