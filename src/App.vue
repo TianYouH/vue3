@@ -1,8 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/drop">拖拽(数据交换)</router-link>
+      <router-link to="/">拖拽(数据交换)</router-link>
       <router-link to="/iframe">Iframe</router-link>
     </div>
     <router-view />
