@@ -145,8 +145,10 @@ export default {
       const endMemberIndex = parseInt(this.endExchangeIndex.split("-")[1]);
 
       const _id = this.teamDataArr[endTeamIndex].children[endMemberIndex].id;
-      const _name = this.teamDataArr[endTeamIndex].children[endMemberIndex].name;
-      const _mobile = this.teamDataArr[endTeamIndex].children[endMemberIndex].mobile;
+      const _name = this.teamDataArr[endTeamIndex].children[endMemberIndex]
+        .name;
+      const _mobile = this.teamDataArr[endTeamIndex].children[endMemberIndex]
+        .mobile;
 
       this.teamDataArr[endTeamIndex].children[
         endMemberIndex
