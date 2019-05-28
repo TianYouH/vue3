@@ -1,14 +1,24 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">拖拽(数据交换)</router-link> |
-      <router-link to="/iframe">Iframe</router-link> |
-      <router-link to="/cLodop">C-Lodop</router-link>
-    </div>
-    <router-view />
+    <el-container class="app-box">
+      <el-aside width="200px">
+        <el-menu router>
+          <el-submenu index="1">
+            <template slot="title">
+              <i class="el-icon-location"></i> <span>一</span>
+            </template>
+            <el-menu-item-group>
+              <el-menu-item index="/">拖拽(数据交换)</el-menu-item>
+              <el-menu-item index="/iframe">Iframe</el-menu-item>
+              <el-menu-item index="/cLodop">C-Lodop</el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+        </el-menu>
+      </el-aside>
+      <el-main><router-view /></el-main>
+    </el-container>
   </div>
 </template>
-
 <style lang="scss">
 body,
 html {
@@ -16,22 +26,15 @@ html {
   margin: 0;
 }
 #app {
-  overflow: hidden;
   height: 100%;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  .el-container {
+    overflow: hidden;
+    flex: 1;
   }
 }
 </style>
