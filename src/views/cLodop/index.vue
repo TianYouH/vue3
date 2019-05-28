@@ -1,5 +1,5 @@
 <template>
-  <div id="c-lodop"><p>你好世界</p></div>
+  <div id="c-lodop" class="container"><p>你好世界</p></div>
 </template>
 <script>
 export default {
@@ -12,8 +12,4 @@ export default {
   methods: {}
 };
 </script>
-<style scoped lang="scss">
-#c-lodop {
-  height: 100%;
-}
-</style>
+<style scoped lang="scss"></style>

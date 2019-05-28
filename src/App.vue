@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <el-container class="app-box">
+    <el-container class="container">
       <el-aside width="200px">
         <el-menu router>
           <el-submenu index="1">
@@ -32,9 +32,5 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  .el-container {
-    overflow: hidden;
-    flex: 1;
-  }
 }
 </style>
