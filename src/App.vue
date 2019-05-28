@@ -2,7 +2,12 @@
   <div id="app">
     <el-container class="container">
       <el-aside width="200px">
-        <el-menu router>
+        <el-menu
+          router
+          background-color="#545c64"
+          text-color="#fff"
+          active-text-color="#ffd04b"
+        >
           <el-submenu index="1">
             <template slot="title">
               <i class="el-icon-location"></i> <span>一</span>

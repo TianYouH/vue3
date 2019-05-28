@@ -20,13 +20,13 @@ export default new Router({
       path: "/iframe",
       name: "iframe",
       component: () =>
-        import(/* webpackChunkName: "about" */ "./views/iFrame/index.vue")
+        import(/* webpackChunkName: "about" */ "@/views/iFrame/index.vue")
     },
     {
       path: "/cLodop",
       name: "cLodop",
       component: () =>
-        import(/* webpackChunkName: "about" */ "./views/cLodop/index.vue")
+        import(/* webpackChunkName: "about" */ "@/views/cLodop/index.vue")
     }
   ]
 });
