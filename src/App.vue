@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">拖拽(数据交换)</router-link>
-      <router-link to="/iframe">Iframe</router-link>
+      <router-link to="/">拖拽(数据交换)</router-link> |
+      <router-link to="/iframe">Iframe</router-link> |
+      <router-link to="/cLodop">C-Lodop</router-link>
     </div>
     <router-view />
   </div>
@@ -12,8 +13,10 @@
 body,
 html {
   height: 100%;
+  margin: 0;
 }
 #app {
+  overflow: hidden;
   height: 100%;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
