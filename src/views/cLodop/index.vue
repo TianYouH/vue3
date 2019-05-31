@@ -83,9 +83,15 @@ export default {
       switch (type) {
         case 1:
           // 2100,2970 不要通过改变尺寸顺序来改变预览横纵，这样会导致视觉上是横向，单打印出结果是纵向纸横向数据。
-          lodop.SET_PRINT_PAGESIZE(1, 0, 0, "A4");
-          // lodop.SET_SHOW_MODE("LANDSCAPE_DEFROTATED", true); // 横向打印的预览默认旋转90度（正向显示）默认false。
-          lodop.ADD_PRINT_HTML(0, 0, "100%", "100%", "<div>你好世界</div>");
+          lodop.SET_PRINT_PAGESIZE(2, 0, 0, "A4");
+          lodop.SET_SHOW_MODE("LANDSCAPE_DEFROTATED", true); // 横向打印的预览默认旋转90度（正向显示）默认false。
+          lodop.ADD_PRINT_HTML(
+            0,
+            0,
+            "100%",
+            "100%",
+            "<div style='height: 760px;background-color: red;' >你好世界</div>"
+          );
           lodop.On_Return = function(taskId, value) {
             console.log("taskId:", taskId);
             console.log("value:", value);
