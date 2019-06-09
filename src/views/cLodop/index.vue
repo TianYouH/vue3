@@ -4,8 +4,10 @@
       <el-col>
         <el-button type="primary" @click="initPrint">初始化实例</el-button>
         <el-button type="primary" @click="buttonOnClick(1)">测试打印</el-button>
-        <el-button type="primary" @click="buttonOnClick(3)">测试</el-button>
-        <el-button type="primary" @click="buttonOnClick(4)">测试</el-button>
+        <el-button type="primary" @click="buttonOnClick(2)"
+          >测试纸张大小</el-button
+        >
+        <el-button type="primary" @click="buttonOnClick(4)">测试布局</el-button>
         <el-button type="primary" @click="buttonOnClick(5)">测试</el-button>
         <el-button type="primary" @click="buttonOnClick(6)">测试</el-button>
         <el-button type="primary" @click="buttonOnClick(7)">测试</el-button>
@@ -83,7 +85,7 @@ export default {
       switch (type) {
         case 1:
           // 2100,2970 不要通过改变尺寸顺序来改变预览横纵，这样会导致视觉上是横向，单打印出结果是纵向纸横向数据。
-          lodop.SET_PRINT_PAGESIZE(2, 0, 0, "A4");
+          lodop.SET_PRINT_PAGESIZE(1, 0, 0, "A4");
           lodop.SET_SHOW_MODE("LANDSCAPE_DEFROTATED", true); // 横向打印的预览默认旋转90度（正向显示）默认false。
           lodop.ADD_PRINT_HTML(
             0,
@@ -96,7 +98,22 @@ export default {
             console.log("taskId:", taskId);
             console.log("value:", value);
           };
-          lodop.PREVIEW();
+          lodop.PREVIEW(); // PREVIEW(oView,iW,iH) 文档未写，常见问题  28.如何正确理解C-Lodop预览模式
+          break;
+        case 2:
+          lodop.SET_PRINT_PAGESIZE(0, "120px", "140px");
+          lodop.ADD_PRINT_HTML(
+            0,
+            0,
+            "100%",
+            "100%",
+            "<div style='height: 100px;background-color: red;' >你好世界</div>"
+          );
+          lodop.On_Return = function(taskId, value) {
+            console.log("taskId:", taskId);
+            console.log("value:", value);
+          };
+          lodop.PREVIEW(); // PREVIEW(oView,iW,iH) 文档未写，常见问题  28.如何正确理解C-Lodop预览模式 也可通过设置显示模改变配置
           break;
         default:
           break;
