@@ -80,8 +80,7 @@ export function getLodop(oOBJECT, oEMBED) {
   var strCLodopInstall_2 =
     "<br>（若此前已安装过，可<a href='CLodop.protocol:setup' target='_self'>点这里直接再次启动</a>）";
   var strCLodopInstall_3 = "，成功后请刷新本页面。</font>";
-  var strCLodopUpdate =
-    "<br><font color='#FF00FF'>Web打印服务CLodop需升级!点击这里<a href='CLodop_Setup_for_Win32NT.exe' target='_self'>执行升级</a>,升级后请刷新页面。</font>";
+  // var strCLodopUpdate = "<br><font color='#FF00FF'>Web打印服务CLodop需升级!点击这里<a href='CLodop_Setup_for_Win32NT.exe' target='_self'>执行升级</a>,升级后请刷新页面。</font>";
   var LODOP;
   try {
     var ua = navigator.userAgent;
@@ -93,12 +92,12 @@ export function getLodop(oOBJECT, oEMBED) {
         // eslint-disable-next-line no-empty
       } catch (err) {}
       if (!LODOP && document.readyState !== "complete") {
-        Message({
-          type: "warning",
-          dangerouslyUseHTMLString: true,
-          message: "网页还没下载完毕，请稍等一下再操作.",
-          showClose: true
-        });
+        // Message({
+        //   type: "warning",
+        //   dangerouslyUseHTMLString: true,
+        //   message: "网页还没下载完毕，请稍等一下再操作.",
+        //   showClose: true
+        // });
         return;
       }
       if (!LODOP) {
@@ -115,12 +114,12 @@ export function getLodop(oOBJECT, oEMBED) {
       } else {
         // eslint-disable-next-line no-undef
         if (CLODOP.CVERSION < "3.0.8.3") {
-          Message({
-            type: "warning",
-            dangerouslyUseHTMLString: true,
-            message: strCLodopUpdate,
-            showClose: true
-          });
+          // Message({
+          //   type: "warning",
+          //   dangerouslyUseHTMLString: true,
+          //   message: strCLodopUpdate,
+          //   showClose: true
+          // });
         }
         if (oEMBED && oEMBED.parentNode) {
           oEMBED.parentNode.removeChild(oEMBED);
