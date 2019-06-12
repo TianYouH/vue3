@@ -36,7 +36,7 @@ export default {
   data() {
     return {
       name: "黄金亮",
-      lodop: null,
+      lodop: getLodop(),
       a: 0 // 打印机 索引
     };
   },
@@ -67,8 +67,7 @@ export default {
     }
   },
   mounted() {
-    this.lodop = getLodop();
-    console.log("打印cLodop实例：", this.lodop);
+    this.initPrint();
   },
   methods: {
     initPrint() {
