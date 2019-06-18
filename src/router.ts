@@ -27,6 +27,12 @@ export default new Router({
       name: "cLodop",
       component: () =>
         import(/* webpackChunkName: "about" */ "@/views/cLodop/index.vue")
+    },
+    {
+      path: "/privateProperty",
+      name: "privateProperty",
+      component: () =>
+        import(/* webpackChunkName: "about" */ "@/views/private-property/index.vue")
     }
   ]
 });

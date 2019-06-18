@@ -16,6 +16,9 @@
               <el-menu-item index="/">拖拽(数据交换)</el-menu-item>
               <el-menu-item index="/iframe">Iframe</el-menu-item>
               <el-menu-item index="/cLodop">C-Lodop</el-menu-item>
+              <el-menu-item index="/privateProperty"
+                >privateProperty</el-menu-item
+              >
             </el-menu-item-group>
           </el-submenu>
         </el-menu>
